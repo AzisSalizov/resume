@@ -1,0 +1,34 @@
+{%extends 'createresume/base.html'%}
+   {%block title%}
+      {{title}}
+   {%endblock%}
+
+   {%block content%}
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+
+   {%for el in resumes%}
+  <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+         <div class="card-header py-3">
+          <h4 class="my-0 fw-normal"> Имя :{{el.name}}</h4>
+         </div>
+
+          <div class="card-body">
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>{{el.surname}}</li>
+            <li>{{el.gender}}</li>
+            <li>{{el.age}}</li>
+            <li>{{el.email}}</li>
+            <li>{{el.tell}}</li>
+            <li>{{el.location}}</li>
+            <li>{{el.descr}}</li>
+            <li>{{el.descr_hardSkill}}</li>
+          </ul>
+         </div>
+      </div>
+   </div>
+   {%endfor%}
+
+  </div>
+
+   {%endblock%}

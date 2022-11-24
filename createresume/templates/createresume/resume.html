@@ -1,0 +1,23 @@
+{%extends 'createresume/base.html'%}
+   {%block title%}
+      Создание резюме
+   {%endblock%}
+
+   {%block content%}
+      <center style="margin-bottom:20px ;"><h1>Страница для создание резюме</h1></center>
+         <form method="post">
+            {%csrf_token%}
+            {{form.name}}
+            {{form.surname}}
+            {{form.gender}}
+            {{form.age}}
+            {{form.email}}
+            {{form.tell}}
+            {{form.location}}
+            {{form.descr}}
+            {{form.descr_hardSkill}}
+            {{form.photo}} <br> <br>
+            <button style="width: 100%;" class="btn btn-success" type="submit">Создать</button>
+            <span>{{error}}</span>
+         </form>
+   {%endblock%}
