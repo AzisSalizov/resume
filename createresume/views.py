@@ -12,9 +12,10 @@ def about(request):
 def resume(request): 
    error = ''
    if request.method == 'POST':
-      form = Create_resumeForm(request.POST)
+      form = Create_resumeForm(request.POST , request.FILES)
       if form.is_valid():
          form.save()
+         img_obj = form.instance
          return redirect('home')
       else:
          error = 'Форма была неверной'
@@ -22,6 +23,6 @@ def resume(request):
    form = Create_resumeForm()
    context = {
       'form' : form ,
-      'error': error
+      'error': error,
    }
    return render(request , 'createresume/resume.html' , context)

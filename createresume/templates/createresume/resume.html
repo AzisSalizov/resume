@@ -5,7 +5,7 @@
 
    {%block content%}
       <center style="margin-bottom:20px ;"><h1>Страница для создание резюме</h1></center>
-         <form method="post">
+         <form method="post" enctype="multipart/form-data">
             {%csrf_token%}
             {{form.name}}
             {{form.surname}}
